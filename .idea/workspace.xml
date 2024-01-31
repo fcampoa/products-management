@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c21873dd-375d-477d-838d-22984e707303" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/domain/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/requests/ProductRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/responses/ProductResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/clients/RabbitMQClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/controllers/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/controllers/ProductsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/services/IProductsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/SpringbootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/controllers/ExampleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/dao/DaoConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/mappers/ProductMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitListeners.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/repositories/IProductsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/repositories/ProductsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/services/IProductsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/utilities/Actions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/utilities/EntitiesColumns.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2bjibRosf8eBPCX7WWcgGgT1bRc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.common [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.Application.executor": "Run",
+    "Spring Boot.SpringbootApplication.executor": "Run",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="front" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="microservice" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="SpringbootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c21873dd-375d-477d-838d-22984e707303" name="Changes" comment="" />
+      <created>1706734961898</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1706734961898</updated>
+      <workItem from="1706734962931" duration="3294000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  rabbitmq:
+    host: localhost
+    port: 5673
+    username: guest
+    password: guest
