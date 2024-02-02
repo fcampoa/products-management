@@ -63,6 +63,7 @@
     "JUnit.All in front.executor": "Coverage",
     "JUnit.ProductsServiceTest.executor": "Run",
     "JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1.executor": "Run",
+    "JUnit.java in microservice.executor": "Coverage",
     "Maven.common [package].executor": "Run",
     "Maven.front [clean].executor": "Run",
     "Maven.front [compile].executor": "Run",
@@ -112,7 +113,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+  <component name="RunManager" selected="JUnit.java in microservice">
     <configuration name="All in front" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="front" />
       <option name="PACKAGE_NAME" value="" />
@@ -152,6 +153,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in microservice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="microservice" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/microservice/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="front" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.Application" />
@@ -168,6 +177,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in microservice" />
         <item itemvalue="JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1" />
         <item itemvalue="JUnit.ProductsServiceTest" />
         <item itemvalue="JUnit.All in front" />
@@ -186,7 +196,7 @@
       <workItem from="1706807487637" duration="15366000" />
       <workItem from="1706844904151" duration="8831000" />
       <workItem from="1706892883832" duration="119000" />
-      <workItem from="1706893013957" duration="9194000" />
+      <workItem from="1706893013957" duration="9203000" />
     </task>
     <servers />
   </component>
