@@ -7,6 +7,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.requests.ProductRequest;
 import com.responses.ProductResponse;
 import com.services.IProductsService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +18,8 @@ import java.util.List;
 public class ProductsService implements IProductsService {
     private final RabbitMQClient rabbitMQClient;
     private final ObjectMapper mapper;
+    private static final Logger logger = LogManager.getLogger(ProductsService.class);
+    @Autowired
     public ProductsService(RabbitMQClient rabbitMQClient, ObjectMapper mapper) {
         this.rabbitMQClient = rabbitMQClient;
         this.mapper = mapper;
@@ -26,25 +31,33 @@ public class ProductsService implements IProductsService {
             ProductResponse response = rabbitMQClient.sendAndReceive(request);
             HttpStatus status = HttpStatus.valueOf(response.getResponseStatus());
             if (!status.is2xxSuccessful()) {
+                logger.error(response.getContent());
                 throw new Exception(response.getContent());
             }
             return mapper.readValue(response.getContent(), new TypeReference<List<Product>>() {
             });
         }catch(Exception ex) {
+            logger.error(ex.getMessage());
             System.out.println(ex.getMessage());
-            return null;
+            throw new Exception(ex.getMessage());
         }
     }
 
     @Override
     public int addProduct(Product product) throws Exception {
-        ProductRequest request = new ProductRequest("products.add", mapper.writeValueAsString(product), "POST");
-        ProductResponse response = rabbitMQClient.sendAndReceive(request);
-        HttpStatus status = HttpStatus.valueOf(response.getResponseStatus());
-        if (status.is5xxServerError()) {
-            throw new Exception(response.getContent());
+        try {
+            ProductRequest request = new ProductRequest("products.add", mapper.writeValueAsString(product), "POST");
+            ProductResponse response = rabbitMQClient.sendAndReceive(request);
+            HttpStatus status = HttpStatus.valueOf(response.getResponseStatus());
+            if (status.is5xxServerError()) {
+                logger.error(response.getContent());
+                throw new Exception(response.getContent());
+            }
+            return status.is2xxSuccessful() ? 1 : 0;
+        }catch (Exception ex) {
+            logger.error(ex.getMessage());
+            throw new Exception(ex.getMessage());
         }
-        return status.is2xxSuccessful() ? 1 : 0;
     }
 }
 

@@ -22,7 +22,7 @@ public class ProductsServiceTest {
     @Mock
     private IProductsRepository productsRepository;
     private List<Product> productList = new ArrayList<>();
-    private Product product1 = new Product(1, "fanta", 16, "coca - cola", "1234");
+    private Product product1 = new Product(1, "fanta", 16, "coca-cola", "1234");
     private Product product2 = new Product(1, "7up", 14, "pepsico", "4321");
     @Before
     public void setup() {

@@ -5,39 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c21873dd-375d-477d-838d-22984e707303" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/domain/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/requests/ProductRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/responses/ProductResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/clients/RabbitMQClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/controllers/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/controllers/ProductsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/services/IProductsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/SpringbootApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/controllers/ExampleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/dao/DaoConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/mappers/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitListeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/repositories/IProductsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/repositories/ProductsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/services/IProductsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/utilities/Actions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/utilities/EntitiesColumns.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservice/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/CustomErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitMQConnectionListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/front/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/main/java/com/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/java/com/clients/RabbitMQClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/main/java/com/clients/RabbitMQClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/java/com/controllers/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/main/java/com/controllers/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/webapp/WEB-INF/views/error.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/webapp/WEB-INF/views/product.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/src/main/webapp/WEB-INF/views/productsList.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/main/java/SpringbootApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/main/java/com/SpringbootApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/main/java/com/controllers/ExampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/main/java/com/controllers/ExampleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/main/java/com/rabbit/RabbitMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservice/src/test/java/com/services/ProductsServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/microservice/src/test/java/com/services/ProductsServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,9 +46,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2bjibRosf8eBPCX7WWcgGgT1bRc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -67,7 +60,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.All in front.executor": "Coverage",
+    "JUnit.ProductsServiceTest.executor": "Run",
+    "JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1.executor": "Run",
     "Maven.common [package].executor": "Run",
+    "Maven.front [clean].executor": "Run",
+    "Maven.front [compile].executor": "Run",
+    "Maven.front [install].executor": "Run",
+    "Maven.front [package].executor": "Run",
+    "Maven.front [site].executor": "Run",
+    "Maven.front [test].executor": "Run",
+    "Maven.front [validate].executor": "Run",
+    "Maven.front [verify].executor": "Run",
+    "Maven.microservice [package].executor": "Run",
+    "Maven.products-management [package].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelOrder2": "2",
@@ -79,7 +85,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Application.executor": "Run",
     "Spring Boot.SpringbootApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "SKT-TASK-1-logger",
     "jdk.selected.JAVA_MODULE": "1.8",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -94,25 +100,79 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\resources\META-INF\resources\WEB-INF" />
+      <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\java\com\controllers" />
+      <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\resources\WEB-INF\views" />
+      <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\resources\WEB-INF" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Application">
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+    <configuration name="All in front" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="front" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="microservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.services" />
+      <option name="MAIN_CLASS_NAME" value="com.services.ProductsServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsServiceTest.productService_addProduct_shouldReturns_1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="microservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.services" />
+      <option name="MAIN_CLASS_NAME" value="com.services.ProductsServiceTest" />
+      <option name="METHOD_NAME" value="productService_addProduct_shouldReturns_1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="front" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Application" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.Application" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="microservice" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="SpringbootApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.SpringbootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1" />
+        <item itemvalue="JUnit.ProductsServiceTest" />
+        <item itemvalue="JUnit.All in front" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,11 +182,54 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1706734961898</updated>
-      <workItem from="1706734962931" duration="3294000" />
+      <workItem from="1706734962931" duration="4436000" />
+      <workItem from="1706807487637" duration="15366000" />
+      <workItem from="1706844904151" duration="8831000" />
+      <workItem from="1706892883832" duration="119000" />
+      <workItem from="1706893013957" duration="9194000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservice/src/main/java/com/services/ProductsService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/front/src/main/java/com/services/imp/ProductsService.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/microservice/src/test/java/com/services/ProductsServiceTest.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/front/src/main/java/com/controllers/ProductsController.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/products_management$All_in_front.ic" NAME="All in front Coverage Results" MODIFIED="1706807583483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

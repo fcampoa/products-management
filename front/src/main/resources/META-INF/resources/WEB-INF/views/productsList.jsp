@@ -4,15 +4,20 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Spring Boot JSP Example</title>
+    <title>Products List</title>
 </head>
 <body>
+<c:if test="${not empty message}">
+    <div align="center">
+        <p style="color: green">${message}</p>
+    </div>
+</c:if>
 <table style="border: 1px solid">
     <thead>
     <tr>
         <th>Name</th>
         <th>Price</th>
-        <th>Brand</th>
+        <th>Brands</th>
     </tr>
     </thead>
     <tbody>

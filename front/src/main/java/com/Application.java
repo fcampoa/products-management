@@ -1,3 +1,5 @@
+package com;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
@@ -29,15 +31,14 @@ public class Application extends SpringBootServletInitializer {
     }
     @Bean
     public CachingConnectionFactory connectionFactory() {
-        CachingConnectionFactory connectionFactory = new CachingConnectionFactory();
         // Set other connection properties as needed
-        return connectionFactory;
+        return new CachingConnectionFactory();
     }
     @Bean
     public RabbitTemplate rabbitTemplate() {
         final RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory());
         rabbitTemplate.setMessageConverter(converter());
-        rabbitTemplate.setQueue("direct.queue");
+        rabbitTemplate.setQueue("products");
         return rabbitTemplate;
     }
     @Bean
