@@ -1,0 +1,175 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > RabbitMQConfig</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.rabbit</a>
+</div>
+
+<h1>Coverage Summary for Class: RabbitMQConfig (com.rabbit)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RabbitMQConfig</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/11)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/20)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.rabbit;
+&nbsp;
+&nbsp;import com.fasterxml.jackson.databind.DeserializationFeature;
+&nbsp;import com.fasterxml.jackson.databind.ObjectMapper;
+&nbsp;import org.springframework.amqp.core.*;
+&nbsp;import org.springframework.amqp.rabbit.config.SimpleRabbitListenerContainerFactory;
+&nbsp;import org.springframework.amqp.rabbit.connection.CachingConnectionFactory;
+&nbsp;import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+&nbsp;import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
+&nbsp;import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+&nbsp;import org.springframework.context.annotation.Bean;
+&nbsp;import org.springframework.context.annotation.Configuration;
+&nbsp;import org.springframework.core.task.TaskExecutor;
+&nbsp;import org.springframework.util.ErrorHandler;
+&nbsp;
+&nbsp;@Configuration
+<b class="nc">&nbsp;public class RabbitMQConfig {</b>
+&nbsp;    public static final String DEAD_LETTER_QUEUE = &quot;dead.letter.queue&quot;;
+&nbsp;    public static final String PRODUCTS_QUEUE = &quot;products&quot;;
+&nbsp;    public static final String DLX_EXCHANGE_MESSAGES = PRODUCTS_QUEUE + &quot;.dlx&quot;;
+&nbsp;    public static final String DIRECT_EXCHANGE_ROUTING = &quot;get.products&quot;;
+&nbsp;    @Bean
+&nbsp;    public Queue productsQueue() {
+<b class="nc">&nbsp;        return QueueBuilder.durable(PRODUCTS_QUEUE)</b>
+<b class="nc">&nbsp;                .withArgument(&quot;x-dead-letter-exchange&quot;, DLX_EXCHANGE_MESSAGES)</b>
+<b class="nc">&nbsp;                .build();</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public FanoutExchange deadLetterExchange() {
+<b class="nc">&nbsp;        return new FanoutExchange(DLX_EXCHANGE_MESSAGES);</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public Queue deadLetterQueue() {
+<b class="nc">&nbsp;        return QueueBuilder.durable(DEAD_LETTER_QUEUE).build();</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public Binding deadLetterBinding() {
+<b class="nc">&nbsp;        return BindingBuilder.bind(deadLetterQueue()).to(deadLetterExchange());</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public DirectExchange directExchange() {
+<b class="nc">&nbsp;        return new DirectExchange(PRODUCTS_QUEUE);</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public Binding binding() {
+<b class="nc">&nbsp;        return BindingBuilder.bind(productsQueue()).to(directExchange()).with(DIRECT_EXCHANGE_ROUTING);</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public CachingConnectionFactory connectionFactory() {
+<b class="nc">&nbsp;        return new CachingConnectionFactory();</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public SimpleMessageListenerContainer messageListenerContainer(CachingConnectionFactory connectionFactory, TaskExecutor executor){
+<b class="nc">&nbsp;        SimpleMessageListenerContainer container = new SimpleMessageListenerContainer(connectionFactory);</b>
+<b class="nc">&nbsp;        container.setQueueNames(PRODUCTS_QUEUE);</b>
+<b class="nc">&nbsp;        container.setTaskExecutor(executor);</b>
+<b class="nc">&nbsp;        return container;</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public SimpleRabbitListenerContainerFactory rabbitListenerContainerFactory(CachingConnectionFactory connectionFactory, ErrorHandler errorHandler, Jackson2JsonMessageConverter converter) {
+<b class="nc">&nbsp;        SimpleRabbitListenerContainerFactory factory = new SimpleRabbitListenerContainerFactory();</b>
+<b class="nc">&nbsp;        factory.setConnectionFactory(connectionFactory);</b>
+<b class="nc">&nbsp;        factory.setErrorHandler(errorHandler);</b>
+<b class="nc">&nbsp;        factory.setMessageConverter(converter);</b>
+<b class="nc">&nbsp;        return factory;</b>
+&nbsp;    }
+&nbsp;    @Bean
+&nbsp;    public ErrorHandler customErrorHandler() {
+<b class="nc">&nbsp;        return new CustomErrorHandler();</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-02 14:48</div>
+</div>
+</body>
+</html>

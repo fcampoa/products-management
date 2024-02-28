@@ -34,6 +34,10 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportToHTMLSettings">
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\felix.campoa\Desktop\products-management\htmlReport" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -58,48 +62,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.All in front.executor": "Coverage",
-    "JUnit.ProductsServiceTest.executor": "Run",
-    "JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1.executor": "Run",
-    "JUnit.java in microservice.executor": "Coverage",
-    "Maven.common [package].executor": "Run",
-    "Maven.front [clean].executor": "Run",
-    "Maven.front [compile].executor": "Run",
-    "Maven.front [install].executor": "Run",
-    "Maven.front [package].executor": "Run",
-    "Maven.front [site].executor": "Run",
-    "Maven.front [test].executor": "Run",
-    "Maven.front [validate].executor": "Run",
-    "Maven.front [verify].executor": "Run",
-    "Maven.microservice [package].executor": "Run",
-    "Maven.products-management [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.Application.executor": "Run",
-    "Spring Boot.SpringbootApplication.executor": "Run",
-    "git-widget-placeholder": "SKT-TASK-1-logger",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.All in front.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ProductsServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in front.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.java in microservice.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven.common [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [site].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.front [verify].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.microservice [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.products-management [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SpringbootApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;SKT-TASK-1-logger&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\felix.campoa\Desktop\products-management\front\src\main\resources\META-INF\resources\WEB-INF" />
@@ -113,7 +118,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in microservice">
+  <component name="RunManager" selected="Spring Boot.Application">
     <configuration name="All in front" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="front" />
       <option name="PACKAGE_NAME" value="" />
@@ -153,6 +158,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in front" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="front" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/front/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in microservice" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="microservice" />
       <option name="TEST_OBJECT" value="directory" />
@@ -178,6 +191,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.java in microservice" />
+        <item itemvalue="JUnit.java in front" />
         <item itemvalue="JUnit.ProductsServiceTest.productService_addProduct_shouldReturns_1" />
         <item itemvalue="JUnit.ProductsServiceTest" />
         <item itemvalue="JUnit.All in front" />
@@ -196,7 +210,7 @@
       <workItem from="1706807487637" duration="15366000" />
       <workItem from="1706844904151" duration="8831000" />
       <workItem from="1706892883832" duration="119000" />
-      <workItem from="1706893013957" duration="9203000" />
+      <workItem from="1706893013957" duration="13864000" />
     </task>
     <servers />
   </component>
@@ -240,6 +254,9 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Products_Management$java_in_front.ic" NAME="java in front Coverage Results" MODIFIED="1706909393398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/products_management$All_in_front.ic" NAME="All in front Coverage Results" MODIFIED="1706807583483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Products_Management$java_in_microservice.ic" NAME="java in microservice Coverage Results" MODIFIED="1706910211018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Products_Management$SpringbootApplication.ic" NAME="SpringbootApplication Coverage Results" MODIFIED="1706910124326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

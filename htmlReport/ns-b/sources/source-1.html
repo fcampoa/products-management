@@ -1,0 +1,149 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > ProductsService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.services</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductsService (com.services)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductsService</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (4/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    68.4%
+  </span>
+  <span class="absValue">
+    (13/19)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.services;
+&nbsp;
+&nbsp;import com.domain.Product;
+&nbsp;import com.repositories.IProductsRepository;
+&nbsp;import com.sun.org.apache.xerces.internal.impl.xpath.regex.RegularExpression;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;import org.apache.logging.log4j.LogManager;
+&nbsp;import org.apache.logging.log4j.Logger;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;@Service
+&nbsp;public class ProductsService implements IProductsService{
+&nbsp;    private final IProductsRepository productsRepository;
+<b class="fc">&nbsp;    private final RegularExpression regex = new RegularExpression(&quot;^(([a-z0-9])*\\s*|\\-([a-z0-9]))*(?!([\\/@\\_\\*\\&lt;\\&gt;]))$&quot;);</b>
+<b class="fc">&nbsp;    private static final Logger logger = LogManager.getLogger(ProductsService.class);</b>
+&nbsp;
+&nbsp;    @Autowired
+<b class="fc">&nbsp;    public ProductsService(IProductsRepository productsRepository) {</b>
+<b class="fc">&nbsp;        this.productsRepository = productsRepository;</b>
+&nbsp;    }
+&nbsp;    public List&lt;Product&gt; getProducts() {
+<b class="fc">&nbsp;        return productsRepository.getProducts();</b>
+&nbsp;    }
+&nbsp;    public int addProduct(Product product) throws Exception {
+<b class="fc">&nbsp;        if (productsRepository.checkDuplicated(product.getBarCode()) &gt; 0) {</b>
+<b class="fc">&nbsp;            logger.error(&quot;duplicated product with barCode: &quot; + product.getBarCode());</b>
+<b class="fc">&nbsp;            throw new Exception(&quot;duplicated product with barCode: &quot; + product.getBarCode());</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (!regex.matches(product.getName())) {</b>
+<b class="nc">&nbsp;            logger.error(&quot;invalid value in field&quot; + product.getName());</b>
+<b class="nc">&nbsp;            throw new Exception(&quot;invalid value &quot; + product.getName());</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (!regex.matches(product.getBrand())) {</b>
+<b class="nc">&nbsp;            logger.error(&quot;invalid value in field &quot; + product.getBrand());</b>
+<b class="nc">&nbsp;            throw new Exception(&quot;invalid value &quot; + product.getBrand());</b>
+&nbsp;        }
+<b class="fc">&nbsp;        if (!regex.matches(product.getBarCode())) {</b>
+<b class="nc">&nbsp;            logger.error(&quot;invalid value in field&quot; + product.getBarCode());</b>
+<b class="nc">&nbsp;            throw new Exception(&quot;invalid value &quot; + product.getBarCode());</b>
+&nbsp;        }
+<b class="fc">&nbsp;        logger.info(&quot;product with barCode &quot; + product.getBarCode() + &quot; created&quot;);</b>
+<b class="fc">&nbsp;        return productsRepository.addProduct(product);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-02 14:48</div>
+</div>
+</body>
+</html>

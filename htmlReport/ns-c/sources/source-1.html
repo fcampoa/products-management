@@ -1,0 +1,193 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > ProductsService</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.services.imp</a>
+</div>
+
+<h1>Coverage Summary for Class: ProductsService (com.services.imp)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">ProductsService</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">ProductsService$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/26)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.services.imp;
+&nbsp;
+&nbsp;import com.clients.RabbitMQClient;
+&nbsp;import com.domain.Product;
+&nbsp;import com.fasterxml.jackson.core.type.TypeReference;
+&nbsp;import com.fasterxml.jackson.databind.ObjectMapper;
+&nbsp;import com.requests.ProductRequest;
+&nbsp;import com.responses.ProductResponse;
+&nbsp;import com.services.IProductsService;
+&nbsp;import org.apache.logging.log4j.LogManager;
+&nbsp;import org.apache.logging.log4j.Logger;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.stereotype.Service;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;@Service
+&nbsp;public class ProductsService implements IProductsService {
+&nbsp;    private final RabbitMQClient rabbitMQClient;
+&nbsp;    private final ObjectMapper mapper;
+<b class="nc">&nbsp;    private static final Logger logger = LogManager.getLogger(ProductsService.class);</b>
+&nbsp;    @Autowired
+<b class="nc">&nbsp;    public ProductsService(RabbitMQClient rabbitMQClient, ObjectMapper mapper) {</b>
+<b class="nc">&nbsp;        this.rabbitMQClient = rabbitMQClient;</b>
+<b class="nc">&nbsp;        this.mapper = mapper;</b>
+&nbsp;    }
+&nbsp;    @Override
+&nbsp;    public List&lt;Product&gt; getProductsList() throws Exception {
+&nbsp;        try {
+<b class="nc">&nbsp;            ProductRequest request = new ProductRequest(&quot;products.getAll&quot;, &quot;get&quot;, &quot;GET&quot;);</b>
+<b class="nc">&nbsp;            ProductResponse response = rabbitMQClient.sendAndReceive(request);</b>
+<b class="nc">&nbsp;            HttpStatus status = HttpStatus.valueOf(response.getResponseStatus());</b>
+<b class="nc">&nbsp;            if (!status.is2xxSuccessful()) {</b>
+<b class="nc">&nbsp;                logger.error(response.getContent());</b>
+<b class="nc">&nbsp;                throw new Exception(response.getContent());</b>
+&nbsp;            }
+<b class="nc">&nbsp;            return mapper.readValue(response.getContent(), new TypeReference&lt;List&lt;Product&gt;&gt;() {</b>
+&nbsp;            });
+<b class="nc">&nbsp;        }catch(Exception ex) {</b>
+<b class="nc">&nbsp;            logger.error(ex.getMessage());</b>
+<b class="nc">&nbsp;            System.out.println(ex.getMessage());</b>
+<b class="nc">&nbsp;            throw new Exception(ex.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;
+&nbsp;    @Override
+&nbsp;    public int addProduct(Product product) throws Exception {
+&nbsp;        try {
+<b class="nc">&nbsp;            ProductRequest request = new ProductRequest(&quot;products.add&quot;, mapper.writeValueAsString(product), &quot;POST&quot;);</b>
+<b class="nc">&nbsp;            ProductResponse response = rabbitMQClient.sendAndReceive(request);</b>
+<b class="nc">&nbsp;            HttpStatus status = HttpStatus.valueOf(response.getResponseStatus());</b>
+<b class="nc">&nbsp;            if (status.is5xxServerError()) {</b>
+<b class="nc">&nbsp;                logger.error(response.getContent());</b>
+<b class="nc">&nbsp;                throw new Exception(response.getContent());</b>
+&nbsp;            }
+<b class="nc">&nbsp;            return status.is2xxSuccessful() ? 1 : 0;</b>
+<b class="nc">&nbsp;        }catch (Exception ex) {</b>
+<b class="nc">&nbsp;            logger.error(ex.getMessage());</b>
+<b class="nc">&nbsp;            throw new Exception(ex.getMessage());</b>
+&nbsp;        }
+&nbsp;    }
+&nbsp;}
+&nbsp;
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-02 14:48</div>
+</div>
+</body>
+</html>

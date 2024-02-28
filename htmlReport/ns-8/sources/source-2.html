@@ -1,0 +1,96 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > IProductsRepository</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.repositories</a>
+</div>
+
+<h1>Coverage Summary for Class: IProductsRepository (com.repositories)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+</tr>
+  <tr>
+    <td class="name">IProductsRepository$MockitoMock$1851644552</td>
+  </tr>
+  <tr>
+    <td class="name">IProductsRepository$MockitoMock$1851644552$auxiliary$qfDYnhl0</td>
+  </tr>
+  <tr>
+    <td class="name">IProductsRepository$MockitoMock$1851644552$auxiliary$yDIXa2P7</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.repositories;
+&nbsp;
+&nbsp;import com.domain.Product;
+&nbsp;import com.utilities.EntitiesColumns;
+&nbsp;import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
+&nbsp;import org.jdbi.v3.sqlobject.customizer.Bind;
+&nbsp;import org.jdbi.v3.sqlobject.customizer.BindBean;
+&nbsp;import org.jdbi.v3.sqlobject.statement.SqlQuery;
+&nbsp;import org.jdbi.v3.sqlobject.statement.SqlUpdate;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;public interface IProductsRepository {
+&nbsp;    @SqlQuery(&quot;call sp_get_all_products()&quot;)
+&nbsp;    List&lt;Product&gt; getProducts();
+&nbsp;    @SqlUpdate(&quot;call sp_insert_product(:product.name, :product.price, :product.brand, :product.barCode)&quot;)
+&nbsp;    int addProduct(@BindBean(&quot;product&quot;) Product product);
+&nbsp;    @SqlQuery(&quot;call sp_check_duplicated_product(:barCode)&quot;)
+&nbsp;    int checkDuplicated(@Bind(&quot;barCode&quot;) String barCode);
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-02 14:48</div>
+</div>
+</body>
+</html>

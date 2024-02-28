@@ -1,0 +1,205 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > RabbitListeners</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.rabbit</a>
+</div>
+
+<h1>Coverage Summary for Class: RabbitListeners (com.rabbit)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RabbitListeners</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/28)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">RabbitListeners$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/29)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.rabbit;
+&nbsp;
+&nbsp;import com.domain.Product;
+&nbsp;import com.fasterxml.jackson.core.JsonProcessingException;
+&nbsp;import com.fasterxml.jackson.databind.ObjectMapper;
+&nbsp;import com.rabbitmq.client.ShutdownSignalException;
+&nbsp;import com.requests.ProductRequest;
+&nbsp;import com.responses.ProductResponse;
+&nbsp;import com.services.IProductsService;
+&nbsp;import com.utilities.Actions;
+&nbsp;import org.apache.logging.log4j.LogManager;
+&nbsp;import org.apache.logging.log4j.Logger;
+&nbsp;import org.springframework.amqp.AmqpIOException;
+&nbsp;import org.springframework.amqp.rabbit.annotation.RabbitListener;
+&nbsp;import org.springframework.amqp.rabbit.core.RabbitTemplate;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.messaging.handler.annotation.Payload;
+&nbsp;import org.springframework.stereotype.Component;
+&nbsp;
+&nbsp;import java.util.Objects;
+&nbsp;
+&nbsp;@Component
+&nbsp;public class RabbitListeners {
+&nbsp;    private final IProductsService productsService;
+&nbsp;    private final ObjectMapper mapper;
+<b class="nc">&nbsp;    private static final Logger logger = LogManager.getLogger(RabbitListeners.class);</b>
+&nbsp;
+&nbsp;    @Autowired
+<b class="nc">&nbsp;    public RabbitListeners(IProductsService productsService, ObjectMapper mapper) {</b>
+<b class="nc">&nbsp;        this.productsService = productsService;</b>
+<b class="nc">&nbsp;        this.mapper = mapper;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @RabbitListener(queues = RabbitMQConfig.PRODUCTS_QUEUE, containerFactory = &quot;rabbitListenerContainerFactory&quot;)
+&nbsp;    public synchronized ProductResponse processRequest(@Payload ProductRequest request) {
+&nbsp;        // Process the request and prepare the response
+&nbsp;        //ProductRequest request = new ProductRequest();
+<b class="nc">&nbsp;        ProductResponse response = new ProductResponse();</b>
+<b class="nc">&nbsp;        Actions action = Actions.getFromValue(request.getRequestId());</b>
+&nbsp;        try {
+<b class="nc">&nbsp;            response.setRequestId(request.getRequestId());</b>
+<b class="nc">&nbsp;            switch(Objects.requireNonNull(action)) {</b>
+&nbsp;                case GETLIST:
+<b class="nc">&nbsp;                    response.setContent(mapper.writeValueAsString(productsService.getProducts()));</b>
+<b class="nc">&nbsp;                    response.setResponseStatus(HttpStatus.OK.value());</b>
+<b class="nc">&nbsp;                    break;</b>
+&nbsp;                case ADD:
+<b class="nc">&nbsp;                    addProduct(request, response);</b>
+<b class="nc">&nbsp;                    break;</b>
+&nbsp;                default:
+&nbsp;                    break;
+&nbsp;            }
+&nbsp;        }
+<b class="nc">&nbsp;        catch (AmqpIOException aioe) {</b>
+<b class="nc">&nbsp;            logger.error(aioe.getMessage());</b>
+<b class="nc">&nbsp;            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());</b>
+<b class="nc">&nbsp;            response.setContent(aioe.getMessage());</b>
+<b class="nc">&nbsp;        } catch (JsonProcessingException | ShutdownSignalException jpe) {</b>
+<b class="nc">&nbsp;            logger.error(jpe.getMessage());</b>
+<b class="nc">&nbsp;        }</b>
+<b class="nc">&nbsp;        return response;</b>
+&nbsp;    }
+&nbsp;    private void addProduct(ProductRequest request, ProductResponse response) {
+&nbsp;        try {
+<b class="nc">&nbsp;            Product p = mapper.readValue(request.getContent(), Product.class);</b>
+<b class="nc">&nbsp;            response.setContent(String.valueOf(productsService.addProduct(p)));</b>
+<b class="nc">&nbsp;            response.setResponseStatus(HttpStatus.CREATED.value());</b>
+&nbsp;        }
+<b class="nc">&nbsp;        catch(Exception ex) {</b>
+<b class="nc">&nbsp;            response.setResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR.value());</b>
+<b class="nc">&nbsp;            response.setContent(ex.getMessage());</b>
+<b class="nc">&nbsp;        }</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-02-02 14:48</div>
+</div>
+</body>
+</html>
